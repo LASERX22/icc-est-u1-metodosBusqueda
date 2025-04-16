@@ -47,7 +47,7 @@ public class MetodosBusqueda {
 
     public int findPersonByName(String name){
         for(int i=0; i<people.length; i++){
-            if(people[i].getName()==name){
+            if(people[i].getName().equals(name)){
                 return i;
             }
         }
