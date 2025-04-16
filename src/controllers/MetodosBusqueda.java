@@ -9,6 +9,7 @@ public class MetodosBusqueda {
         showConsole=new ShowConsole();
         this.people= persons;
         showPerson();
+        showpersonByName();
     }
 
     public int metodoLineal(int[] arreglo, int elemento){
@@ -44,10 +45,23 @@ public class MetodosBusqueda {
         }
     }
 
-    /*public int findPersonByName(){
+    public int findPersonByName(String name){
+        for(int i=0; i<people.length; i++){
+            if(people[i].getName()==name){
+                return i;
+            }
+        }
         return -1;
     }
     public void showpersonByName(){
-        String nameTofind=showConsole.inputName()
-    }*/
+        String nameTofind=showConsole.inputName();
+        int indexPerson=findPersonByName(nameTofind);
+        if(indexPerson>=0){
+            showConsole.showMessage("Persona con nombre "+nameTofind+" encontrada");
+            showConsole.showMessage(people[indexPerson].toString());
+        }
+        else{
+            showConsole.showMessage("Persona no encontrada");
+        }
+    }
 }
